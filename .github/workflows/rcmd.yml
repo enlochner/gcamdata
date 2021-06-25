@@ -3,9 +3,6 @@ name: R-CMD
 # Controls when the action will run. 
 on: [push, pull_request]
 
- # Allows you to run this workflow manually from the Actions tab
- workflow_dispatch:
-
 jobs:
   R-CMD:
     runs-on: ${{ matrix.config.os }}
@@ -13,7 +10,7 @@ jobs:
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
 
     strategy:
-      fail-fast: false # Default = true. When set to true, GitHub cancels all in-progress jobs if any matrix job fails
+      fail-fast: false 
       matrix:
         config:
           # for latest stable version of R for MacOSX
